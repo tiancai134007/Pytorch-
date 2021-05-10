@@ -11,7 +11,7 @@
 * 线性变换
 * 仿射变换
 * 亮度、饱和度及对比度变换
-
+![image](https://github.com/tiancai134007/Pytorch-/blob/main/image/methods.png)
 # normalize
 功能：逐channel的对图像进行标准化
 output = （input- mean）/ std
