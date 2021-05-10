@@ -32,10 +32,10 @@ output = （input- mean）/ std
 当为（a,b,c,d）时,左,上,右,下分别填充a,b,c,d    
 * pad_if_need:若图像小于设定size，则填充
 * padding_mode: 填充模式，有4种模式
-1、constant：像素值由fill设定
-2、edge：像素值由图像边缘像素决定
-3、reflect：镜像填充，最后一个像素不镜像，例如:[1,2,3,4] -> [3,2,1,2,3,4,3,2]
-4、symmetric: 镜像填充，最后一个像素镜像，例如：[1,2,3,4] -> [2,1,1,2,3,4,4,3]
+<br>1、constant：像素值由fill设定
+<br>2、edge：像素值由图像边缘像素决定
+<br>3、reflect：镜像填充，最后一个像素不镜像，例如:[1,2,3,4] -> [3,2,1,2,3,4,3,2]
+<br>4、symmetric: 镜像填充，最后一个像素镜像，例如：[1,2,3,4] -> [2,1,1,2,3,4,4,3]
 * fill:为constant时，设置填充的像素值 
 
 # RandomResizedCrop
@@ -65,3 +65,30 @@ PIL.Image.BICUBIC
 * resample：重采样方法
 * expand：是否扩大图片，以保持原图信息（旋转后部分角的信息可能丢失 ）
 * center：旋转点设置，默认中心旋转
+
+# Pad
+功能：对图片边缘进行填充
+* padding：设置填充大小
+当为a时，上下左右均填充a个像素
+当为（a,b）时，上下填充b个像素，左右填充a个像素
+当为（a,b,c,d）时，左，上，右，下分别填充a,b,c,d
+* padding_mode:填充模式，有4种模式，constant、edge、reflect和symmetric
+* fill：constant时，设置填充的像素值，（R,G,B）or (Gray)
+
+# ColorJitter
+功能：调整亮度、对比度、饱和度和色相
+* brightness：亮度调整因子
+<br>当为a时，从[max(0,1-a),1+a]中随机选择
+<br>当为（a,b）时，从[a,b]中随机选择
+* contrast: 对比度参数，同brightness
+* saturation：饱和度参数，同brightness
+* hue：色相参数，当为a时，从[-a,a]中选择参数，注：0<= a <= 0.5
+<br>当为（a，b）时，从[a,b]中选择参数，注：-0.5 <= a <= b <= 0.5
+
+# Grayscale(当RandomGrayscale的概率为1时的特例)与RandomGrayscale
+功能：依概率将图片转换为灰度图
+* num_output_channels: 输出通道数，只能设1或3
+* p：概率值，图像被转换为灰度图的概率
+
+
+
