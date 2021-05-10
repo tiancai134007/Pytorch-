@@ -47,3 +47,21 @@ output = （input- mean）/ std
 PIL.Image.NEAREST
 PIL.Image.BILINEAR
 PIL.Image.BICUBIC
+
+# FiveCrop与TenCrop
+功能：在图像的上下左右以及中心裁剪出尺寸为size的5张图片，TenCrop对这5张图片进行水平或者垂直镜像获取10张图片
+* size：所需裁剪图片尺寸
+* vertical_flip：是否垂直翻转
+
+# 翻转 RandomHorizontalFlip与RandomVerticalFlip
+功能：依概率水平或者垂直翻转图片
+* p：翻转概率
+
+# 旋转 RandomRotation
+功能：随机旋转图片
+* degrees：旋转角度
+<br>当为a时，在（-a,a）之间选择旋转角度
+<br>当为（a,b）时，在（a,b）之间选择旋转角度
+* resample：重采样方法
+* expand：是否扩大图片，以保持原图信息（旋转后部分角的信息可能丢失 ）
+* center：旋转点设置，默认中心旋转
