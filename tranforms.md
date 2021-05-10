@@ -123,5 +123,20 @@ PIL.Image.BICUBIC
 # transforms.RandomOrder
 功能：对一组transforms操作打乱顺序
 
+# 自定义transforms要素:
+1.仅接收一个参数，返回一个参数
+<br>2.注意上下游的输出与输入
+##### 结构
+    class YourTransforms(object):
+      def __init__(self,...):
+        ...
+      def __call__(self,img):
+        ...
+        return img
+
+# 数据增强的原则
+原则：让训练集与测试集更接近
+
+
 
 
