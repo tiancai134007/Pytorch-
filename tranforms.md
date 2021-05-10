@@ -90,5 +90,38 @@ PIL.Image.BICUBIC
 * num_output_channels: 输出通道数，只能设1或3
 * p：概率值，图像被转换为灰度图的概率
 
+# RandomAffine
+功能：对图像进行仿射变换，仿射变换是二维的线性变换，由五种基本院子变换构成，分别是旋转、平移、缩放、错切和翻转
+* degrees：旋转角度设置
+* translate：平移区间设置，如（a,b）,a设置宽（width）,b设置高（height）
+图像在宽维度平移的区间为 -img_width * a < dx < img_width * a
+* scale: 缩放比例（以面积为单位）
+* fill_color: 填充颜色设置 
+* shear: 错切角度设置，有水平错切和垂直错切
+<br>若为a,则仅在x轴错切，错切角度在（-a,a）之间
+<br>若为（a,b）,则a设置x轴角度，b设置y的角度
+<br>若为（a,b,c,d)，则a,b设置x轴角度，c，d设置y轴角度
+* resample: 重采样方式，有NEAREST、BILINEAR、BICUBIC
+
+# RandomErasing
+功能：对图像进行随机遮挡
+* p：概率值，执行该操作的概率
+* scale：遮挡区域的面积
+* ratio：遮挡区域长宽比
+* value：设置遮挡区域的像素值，（R,G,B）or （Gray）
+
+# Lambda
+功能：用户自定义lambda方法
+* lambd：lambda匿名函数
+
+# transforms.RandomChoice
+功能：从一系列transforms方法中随机挑选一个
+
+# transforms.RandomApply
+功能：依据概率执行一组transforms操作
+
+# transforms.RandomOrder
+功能：对一组transforms操作打乱顺序
+
 
 
