@@ -30,3 +30,28 @@
 * ceil_mode:尺寸向上取整
 * return_indices:记录池化像素索引（应用于最大值反池化）
 ##### 反池化示意图
+![image](https://github.com/tiancai134007/Pytorch-/blob/main/image/反池化.png)
+
+## nn.AvgPool2d
+功能：对二维信号（图像）进行平均值池化
+主要参数：
+* kernel_size:池化核尺寸
+* strile：步长
+* padding：填充个数
+* ceil_mode:尺寸向上取整
+* count_include_pad:填充值用于计算
+* divisor_override：除法因子
+
+## nn.MaxUnpool2d
+功能：对二维信号（图像）进行最大值池化上采样
+主要参数：
+* kernel_size:池化核尺寸
+* strile：步长
+* padding：填充个数
+
+## nn.Linear
+功能：对一维信号（向量）进行线性组合
+主要参数：
+* in_features:输入结点数
+* out_features:输出结点数
+* bias:是否需要偏置
