@@ -38,3 +38,17 @@ tag_scalar_dict：key是变量的tag，value是变量的值
 * range：标准化范围
 * scale_each：是否单张图维度标准化
 * pad_value：padding的像素值
+
+# add_graph()
+功能：可视化模型计算图
+ * model：模型，必须是nn.Module
+ * input_to_model：输出给模型的数据
+ * verbose：是否打印计算图结构信息
+
+#torchsummary
+功能：查看模型信息，便于调试
+* model：pytorch模型
+* inout_size：模型输入size
+* batch_szie：batch size
+* device："cuda" or "cpu"
+
